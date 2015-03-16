@@ -36,7 +36,7 @@ function topSort() {
       print(this.vertexList[stack[i]]);
     }
   }
-
+}
 
 
 function topSortHelper(v, visited, stack) {
@@ -56,26 +56,26 @@ function addEdge(v,w) {
 }
 
 function showGraph() {
-	 for (var i = 0; i < this.vertices; ++i) {
-		  putstr(this.vertexList[i] + " -> ");
-		   for (var j = 0; j < this.vertices; ++j) {
-			    if (this.adj[i][j] !== undefined) {
-				     var w = this.adj[i][j];
-				      putstr(this.vertexList[w] + ' ');
-				       }
-			     }
-		    print();
-		     }
+  for (var i = 0; i < this.vertices; ++i) {
+    putstr(this.vertexList[i] + " -> ");
+    for (var j = 0; j < this.vertices; ++j) {
+      if (this.adj[i][j] !== undefined) {
+        var w = this.adj[i][j];
+        putstr(this.vertexList[w] + ' ');
+      }
+    }
+    print();
+  }
 }
 function dfs(v) {
-	 this.marked[v] = true;
-	  if (this.adj[v] !== undefined) {
-		   print("Visited vertex: " + v);
-		    }
-	   for (var i = 0; i < this.adj[v].length; i++) {
-		    var w = this.adj[v][w];
-		     if (!this.marked[w]) {
-			      this.dfs(w);
-			       }
-		      }
+  this.marked[v] = true;
+  if (this.adj[v] !== undefined) {
+    print("Visited vertex: " + v);
+  }
+  for (var i = 0; i < this.adj[v].length; i++) {
+    var w = this.adj[v][w];
+    if (!this.marked[w]) {
+      this.dfs(w);
+    }
+  }
 }
